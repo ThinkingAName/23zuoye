@@ -1,0 +1,126 @@
+<!doctype html>               <!--申明html文档-->
+<html>
+<head>
+    <meta charset="utf-8">      <!--字符编码为国际编码-->
+    <meta name="Author" content="40期风屿JS——不懂就问">    <!--网页创建者-->
+    <meta name="Keywords" content="作业，练习题">         <!--供搜索引擎搜索匹配的关键-->
+    <meta name="description" content="课后练习题作业，熟悉课堂学习操作">  <!--在搜索有结果页面显示的网页描述-->
+    <title>第23次课后作业</title>   <!--网页标题-->
+    <!--
+          <link rel="stylesheet" type="text/css" href="css/common.css">
+          <link rel="stylesheet" type="text/css" href="css/index.css">
+          <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+          <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+          -->
+    <style>
+        body, p, ul, dl, dd, ol, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+        ul, ol {
+            padding-left: 0;
+            list-style: none;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0;
+        }
+        em, i {
+            font-style: normal; /*设置字体样式：正常显示（就是不倾斜）*/
+        }
+        strong, b {
+            font-weight: normal; /*设置字体加粗：正常显示（就是不加粗）*/
+        }
+        a {
+            text-decoration: none; /*去掉下划线*/
+        }
+        div {
+            width: 400px;
+            height: 80px;
+            margin: auto;
+            border: 2px solid skyblue;
+            font-size: 18px;
+            text-align: center;
+            line-height: 80px;
+            color: aqua;
+        }
+        li,img{
+            float: left;
+        }
+        li{
+            width: 41px;
+            height: 61px;
+            margin: 3px;
+            background-image: url("images/0.png");
+        }
+        .num0{
+            background-image: url("images/0.png");
+        }
+        .num1{
+            background-image: url("images/1.png");
+        }
+        .num2{
+            background-image: url("images/2.png");
+        }
+        .num3{
+            background-image: url("images/3.png");
+        }
+        .num4{
+            background-image: url("images/4.png");
+        }
+        .num5{
+            background-image: url("images/5.png");
+        }
+        .num6{
+            background-image: url("images/6.png");
+        }
+        .num7{
+            background-image: url("images/7.png");
+        }
+        .num8{
+            background-image: url("images/8.png");
+        }
+        .num9{
+            background-image: url("images/9.png");
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <img src="images/d.png" width="17px" height="61px" alt="#" />
+        <li></li>
+        <li></li>
+        <img src="images/d.png" width="17px" height="61px" alt="#" />
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    var li = document.getElementsByTagName("li"),
+        div = document.getElementsByTagName("div");
+    myTimer = setInterval(function(){
+        var date = new Date(),
+            str1 = timeFormat(date.getHours()) + ':'+ timeFormat(date.getMinutes()) + ':'+ timeFormat(date.getSeconds());
+        str2 = timeFormat(date.getHours()) + timeFormat(date.getMinutes()) + timeFormat(date.getSeconds());
+        // console.log(date.getFullYear(),typeof(date.getFullYear()));
+        div[0].innerHTML = str1;
+        for (var i = 0; i < li.length; i++) {
+            // console.log(str2);
+            // console.log(str2[i]);
+            li[i].className = 'num' + str2[i];
+        }
+    },1000);
+
+    function timeFormat(num) {
+        return num < 10? num = '0' + num : num + '';
+
+    }
+</script>
+</body>
+</html>
