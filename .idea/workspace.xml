@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ff6a8ca-8ad2-4c73-afb1-d2ca6a56e1e2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imgBanners.html" />
-      <change beforePath="$PROJECT_DIR$/banner.html" afterPath="$PROJECT_DIR$/banner.html" />
-      <change beforePath="$PROJECT_DIR$/images/0.png" afterPath="$PROJECT_DIR$/images/times/0.png" />
-      <change beforePath="$PROJECT_DIR$/images/1.png" afterPath="$PROJECT_DIR$/images/times/1.png" />
-      <change beforePath="$PROJECT_DIR$/images/2.png" afterPath="$PROJECT_DIR$/images/times/2.png" />
-      <change beforePath="$PROJECT_DIR$/images/3.png" afterPath="$PROJECT_DIR$/images/times/3.png" />
-      <change beforePath="$PROJECT_DIR$/images/4.png" afterPath="$PROJECT_DIR$/images/times/4.png" />
-      <change beforePath="$PROJECT_DIR$/images/5.png" afterPath="$PROJECT_DIR$/images/times/5.png" />
-      <change beforePath="$PROJECT_DIR$/images/6.png" afterPath="$PROJECT_DIR$/images/times/6.png" />
-      <change beforePath="$PROJECT_DIR$/images/7.png" afterPath="$PROJECT_DIR$/images/times/7.png" />
-      <change beforePath="$PROJECT_DIR$/images/8.png" afterPath="$PROJECT_DIR$/images/times/8.png" />
-      <change beforePath="$PROJECT_DIR$/images/9.png" afterPath="$PROJECT_DIR$/images/times/9.png" />
-      <change beforePath="$PROJECT_DIR$/images/d.png" afterPath="$PROJECT_DIR$/images/times/d.png" />
+      <change beforePath="$PROJECT_DIR$/imgBanners.html" afterPath="$PROJECT_DIR$/imgBanners.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,19 +19,17 @@
       <file leaf-file-name="imgBanners.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imgBanners.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="330" column="18" lean-forward="false" selection-start-line="330" selection-start-column="18" selection-end-line="330" selection-end-column="18" />
+            <state relative-caret-position="479">
+              <caret line="373" column="23" lean-forward="false" selection-start-line="373" selection-start-column="23" selection-end-line="373" selection-end-column="23" />
               <folding>
                 <element signature="n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#ul#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#6084#7614#0" expanded="false" />
+                <element signature="e#4327#6012#0" expanded="false" />
                 <element signature="e#6680#7191#0" expanded="false" />
-                <element signature="e#7676#9862#0" expanded="false" />
                 <element signature="e#8392#8795#0" expanded="false" />
-                <element signature="e#9075#9290#0" expanded="false" />
-                <element signature="e#10042#10481#0" expanded="false" />
-                <element signature="e#10078#10180#0" expanded="false" />
-                <element signature="e#10522#10632#0" expanded="false" />
+                <element signature="e#10523#10633#0" expanded="false" />
+                <element signature="e#11368#11878#0" expanded="false" />
+                <element signature="e#11959#12366#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,11 +38,10 @@
       <file leaf-file-name="animation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="382">
               <caret line="189" column="10" lean-forward="false" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#1157#7132#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,11 +103,6 @@
               <item name="23zuoye" type="b2602c69:ProjectViewProjectNode" />
               <item name="23zuoye" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="23zuoye" type="b2602c69:ProjectViewProjectNode" />
-              <item name="23zuoye" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -167,12 +146,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526689577542</updated>
-      <workItem from="1526689592200" duration="35348000" />
+      <workItem from="1526689592200" duration="39012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35348000" />
+    <option name="totallyTimeSpent" value="39012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -235,30 +214,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="382">
           <caret line="189" column="10" lean-forward="false" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1157#7132#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imgBanners.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="330" column="18" lean-forward="false" selection-start-line="330" selection-start-column="18" selection-end-line="330" selection-end-column="18" />
+        <state relative-caret-position="479">
+          <caret line="373" column="23" lean-forward="false" selection-start-line="373" selection-start-column="23" selection-end-line="373" selection-end-column="23" />
           <folding>
             <element signature="n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#ul#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6084#7614#0" expanded="false" />
+            <element signature="e#4327#6012#0" expanded="false" />
             <element signature="e#6680#7191#0" expanded="false" />
-            <element signature="e#7676#9862#0" expanded="false" />
             <element signature="e#8392#8795#0" expanded="false" />
-            <element signature="e#9075#9290#0" expanded="false" />
-            <element signature="e#10042#10481#0" expanded="false" />
-            <element signature="e#10078#10180#0" expanded="false" />
-            <element signature="e#10522#10632#0" expanded="false" />
+            <element signature="e#10523#10633#0" expanded="false" />
+            <element signature="e#11368#11878#0" expanded="false" />
+            <element signature="e#11959#12366#0" expanded="false" />
           </folding>
         </state>
       </provider>
