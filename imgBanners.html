@@ -1,0 +1,338 @@
+<!doctype html>               <!--申明html文档-->
+<html>
+ <head>
+  <meta charset="utf-8">      <!--字符编码为国际编码-->
+  <meta name="Author" content="JS40期风屿——不懂就问">    <!--网页创建者-->
+  <meta name="Keywords" content="作业，练习题">         <!--供搜索引擎搜索匹配的关键-->
+  <meta name="description" content="课后练习题作业，熟悉课堂学习操作">  <!--在搜索有结果页面显示的网页描述-->
+  <title>第2次课后作业</title>   <!--网页标题-->  
+  <style>
+	body, p, ul, dl, dd, ol, h1, h2, h3, h4, h5, h6{ margin:0;}
+	ul,ol{ padding-left:0;list-style:none;}
+	table{ border-collapse:collapse; }
+	th, td{ padding: 0; }
+	em,i{ font-style:normal;/*设置字体样式：正常显示（就是不倾斜）*/}
+	strong,b{ font-weight:normal;/*设置字体加粗：正常显示（就是不加粗）*/}
+	a{ text-decoration:none;/*去掉下划线*/}
+    button{padding: 0;border: 0;}
+      .clearfix:after{
+          display: block;
+          content: "";
+          clear: both;
+      }
+      .banner{
+          position: relative;
+          width: 640px;
+          height: 360px;
+          overflow: hidden;
+          margin: 50px auto;
+          border: 1px solid black;
+      }
+      .imgBanner{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 1000%;
+      }
+      .imgBanner li{
+          float: left;
+          width: 640px;
+          height: 360px;
+      }
+      .mark{
+          position: absolute;
+          top: 310px;
+          left: 240px;
+          padding: 5px 0 5px 10px;
+          background-color: rgba(160,160,160,.5);
+          border-radius: 20px;
+          transition: .5s;
+          transform: scale(.7);
+
+      }
+      .mark li{
+          float: left;
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          background-color: rgba(80,80,80,.5);
+          border-radius: 50%;
+          cursor: pointer;
+      }
+      .mark .run{
+          position: absolute;
+          background-color: gold;
+      }
+      .banner button{
+          position: absolute;
+          top: 50%;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          font-size: 24px;
+          line-height: 40px;
+          color: #fff;
+          background-color: rgba(80,80,80,.5);
+          transition: .5s;
+          cursor: pointer;
+      }
+      .banner button:hover{
+          background-color: rgba(80,80,80,.8);
+          transform: scale(1.2);
+
+      }
+      .banner .left{
+          left: 0;
+      }
+      .banner .right{
+          left: 600px;
+      }
+      .mark:hover{
+          transform: scale(1.1);
+      }
+  </style>
+     <script src="js/animation.js"></script>
+     <!--
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+      -->
+</head>
+<body>
+    <div class="banner">
+        <ul class="imgBanner clearfix">
+            <li>
+                <img src="images/imgs/1.png" width="640px" height="360px" alt="#"/>
+            </li>
+            <li>
+                <img src="images/imgs/2.png" width="640px" height="360px" alt="#"/>
+            </li>
+            <li>
+                <img src="images/imgs/3.png" width="640px" height="360px" alt="#"/>
+            </li>
+            <li>
+                <img src="images/imgs/4.png" width="640px" height="360px" alt="#"/>
+            </li>
+            <li>
+                <img src="images/imgs/5.png" width="640px" height="360px" alt="#"/>
+            </li>
+            <li>
+                <img src="images/imgs/1.png" width="640px" height="360px" alt="#"/>
+            </li>
+        </ul>
+        <ul class="mark clearfix">
+            <li class="run"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="left"><</button>
+        <button class="right">></button>
+    </div>
+    <script>
+        var banner = document.getElementsByClassName("banner")[0],
+            imgBan = document.getElementsByTagName("ul")[0],
+            imgBanLi = imgBan.getElementsByTagName("li"),
+            mark = document.getElementsByTagName("ul")[1],
+            markLi =  mark.getElementsByTagName("li"),
+            markRun = markLi[0],
+            left = document.getElementsByClassName("left")[0],
+            right = document.getElementsByClassName("right")[0],
+            date = new Date(),
+            num = 0;
+        // 点击显示下一张图片
+        right.onclick = function () {
+                if((new Date() - date) > 500){ // 判断 每次点击时间是否大于 动画执行的时间，
+                    num++;
+                    //console.log(num);
+                    var distanceImg = -num*imgBanLi[0].clientWidth,
+                        distanceMar = (num)*(markLi[1].clientWidth + 10) + 10;
+                    //console.log(distanceMar);
+                   // console.log(num);
+                    //console.log(markLi[1].clientWidth);
+                    // 让标记滚动
+                    if (num ==imgBanLi.length-1){
+                        animation(markRun,{
+                            data:{
+                                opacity:0
+                            }},250,function(){
+                            this.style.left = 10 +'px';
+                            animation(markRun,{
+                                data:{
+                                    opacity:1
+                                }},250);
+                        });
+                    }else{
+                        animation(markRun,{
+                            data:{
+                                left:distanceMar
+                            }
+                        },500);
+                    }
+                    // 让图片滚动
+                    animation(imgBan,{
+                        data:{
+                            left:distanceImg
+                        }},500,function () {
+                        // console.log(num);
+                        // console.log(imgBanLi.length);
+                        if (num == imgBanLi.length-1) {
+                            this.style.left = 0;
+                            num = 0;
+                        }
+                    });
+                    date = new Date(); // 更新点击的起始时间；
+                }
+            };
+        // 点击返回上一张图片
+        left.onclick = function () {
+            if((new Date() - date) > 500){ // 判断 每次点击时间是否大于 动画执行的时间，
+                if (num === 0) {// 判断 第一次点击是否为第一张图片，若为第一张图片，将imgBan设置为最后一张的位置
+                    num = imgBanLi.length-1;
+                    imgBan.style.left = -num*imgBanLi[0].clientWidth +'px';
+                }
+                num--;
+                console.log(num);
+                var distanceImg = -num*imgBanLi[0].clientWidth,
+                    distanceMar = num*(markLi[1].clientWidth + 10)+10;
+                    //console.log(distanceMar);
+                // 让标记滚动
+               if (num ==imgBanLi.length-2){ // 判断 是否从0一张开始点击，向左移动。
+                   animation(markRun,{
+                       data:{
+                           opacity:0
+                       }},250,function(){
+                       markRun.style.left = num*(markLi[1].clientWidth + 10)+ 10 +'px';
+                       console.log(markRun.offsetLeft);
+                       animation(markRun,{
+                           data:{
+                               opacity:1
+                           }},250);
+                   });
+                }else{
+                    animation(markRun,{
+                        data:{
+                            left:distanceMar
+                        }
+                    },500);
+                }
+                // 让图片移动
+                animation(imgBan,{
+                    data:{
+                        left:distanceImg
+                    }},500);
+                date = new Date(); // 更新点击的起始时间；
+            }
+        };
+        // 点击切换图片
+        for(var i=1;i<imgBanLi.length;i++){
+            markLi[i].index = i-1;
+            markLi[i].onclick = function () {
+                var that =this;
+                //console.log(that.index);
+                if(num === 4 && that.index === 0){ // 由最后一张，直接点击第一张，让它从最短路径过来，
+                    num = imgBanLi.length-1;
+                    //imgBan.style.left = -num*imgBanLi[0].clientWidth +'px';
+                    //num--;
+                    animation(imgBan,{
+                        data:{
+                            left:-num*imgBanLi[0].clientWidth
+                        }},500,function(){
+                        imgBan.style.left = 0; // 回调，更新图片位置为初始，不影响其他点击切换
+                    });
+
+                }else if(num == 0 && that.index === 4){ // 由第一张直接点击最后一张，让它从最短路径过来，
+                    imgBan.style.left = 0;
+                    num = imgBanLi.length-1;
+                    imgBan.style.left = -num*imgBanLi[0].clientWidth +'px';
+                    num--;
+                    animation(imgBan,{
+                        data:{
+                            left:-num*imgBanLi[0].clientWidth
+                        }},3000);
+                }else{
+                    animation(imgBan,{
+                        data:{
+                            left:-that.index*640
+                        }},500);
+                }
+
+                // 点击判读当前图片显示位置和点击位置是否为相邻
+                if((that.index -num)*(that.index -num) === 1){
+                    animation(markRun,{
+                        data:{
+                            left:that.index*(this.clientWidth + 10)+10
+                        }
+                    },500);
+                }else {
+                    animation(markRun,{
+                        data:{
+                            opacity:0
+                        }},250,function(){
+                        markRun.style.left = that.index*(markLi[1].clientWidth + 10)+ 10 +'px';
+                       // console.log(markRun.offsetLeft);
+                        animation(markRun,{
+                            data:{
+                                opacity:1
+                            }},250);
+                    });
+                }
+                num = that.index;
+            }
+
+        }
+        // 封装图片每500 ms 自动播放从右向左
+        var auto =  setInterval(function() {autoruning();},1000);
+        function autoruning () {
+            // 让标记跟着运动
+            if(num === 5){
+                animation(markRun,{
+                    data:{
+                        opacity:0
+                    }
+                },250,function () {
+                    markRun.style.left = 10 +'px';
+                    animation(markRun,{
+                        data:{
+                            opacity:1
+                        }
+                    },250);
+                });
+
+                console.log(num)
+             }else {
+                animation(markRun,{
+                    data:{
+                        left:(num)*30 +10
+                    }
+                },500);
+               // console.log(num)
+            };
+
+            // 让图片自动播放
+            animation(imgBan,{
+                data:{
+                    left : -num*640
+                }
+            },500,function(){
+                if(num === 6){
+                    this.style.left = 0;
+                    num=1;
+                }
+                banner.onmouseenter = function () {
+                    clearInterval(auto);
+                    num--;
+                }
+                banner.onmouseleave = function () {
+                    auto =  setInterval(function() {autoruning();},1000);
+                }
+            });
+            num++;
+            };
+
+
+
+    </script>
+</body>
+</html>
