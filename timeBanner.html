@@ -1,0 +1,190 @@
+<!doctype html>               <!--申明html文档-->
+<html>
+<head>
+    <meta charset="utf-8">      <!--字符编码为国际编码-->
+    <meta name="Author" content="40期风屿JS——不懂就问">    <!--网页创建者-->
+    <meta name="Keywords" content="作业，练习题">         <!--供搜索引擎搜索匹配的关键-->
+    <meta name="description" content="课后练习题作业，熟悉课堂学习操作">  <!--在搜索有结果页面显示的网页描述-->
+    <title>第23次课后作业</title>   <!--网页标题-->
+    <!--
+          <link rel="stylesheet" type="text/css" href="css/common.css">
+          <link rel="stylesheet" type="text/css" href="css/index.css">
+          <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+          <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+          -->
+    <style>
+        body, p, ul, dl, dd, ol, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+        ul, ol {
+            padding-left: 0;
+            list-style: none;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0;
+        }
+        em, i {
+            font-style: normal; /*设置字体样式：正常显示（就是不倾斜）*/
+        }
+        strong, b {
+            font-weight: normal; /*设置字体加粗：正常显示（就是不加粗）*/
+        }
+        a {
+            text-decoration: none; /*去掉下划线*/
+        }
+        div {
+            width:304px;
+            padding: 10px 24px;
+            margin: auto;
+            border: 2px solid skyblue;
+            background-color: aquamarine;
+        }
+        .times{
+            height: 61px;
+            overflow: hidden;
+        }
+        li,img{
+            float: left;
+        }
+        li{
+            width: 41px;
+            height: 122px;
+            margin: 0 2px;
+        }
+        p{
+            width: 41px;
+            height: 61px;
+            background-image: url("images/times/0.png");
+        }
+        .num0{
+            background-image: url("images/times/0.png");
+        }
+        .num1{
+            background-image: url("images/times/1.png");
+        }
+        .num2{
+            background-image: url("images/times/2.png");
+        }
+        .num3{
+            background-image: url("images/times/3.png");
+        }
+        .num4{
+            background-image: url("images/times/4.png");
+        }
+        .num5{
+            background-image: url("images/times/5.png");
+        }
+        .num6{
+            background-image: url("images/times/6.png");
+        }
+        .num7{
+            background-image: url("images/times/7.png");
+        }
+        .num8{
+            background-image: url("images/times/8.png");
+        }
+        .num9{
+            background-image: url("images/times/9.png");
+        }
+        .clearfix:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    </style>
+    <script src="js/animation.js"></script>
+
+</head>
+<body>
+<div>
+    <ul class="times clearfix">
+        <li class="hoursBef">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+        <li class="hoursBeh">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+        <img src="images/times/d.png" width="17px" height="61px" alt="#" />
+        <li class="minutesBef">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+        <li class="minutesBeh">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+        <img src="images/times/d.png" width="17px" height="61px" alt="#" />
+        <li class="secondsBef">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+        <li class="secondBeh">
+            <p class="top"></p>
+            <p class="down"></p>
+            <!--<img class="top" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+            <!--<img class="down" src="images/times/0.png" width="41px" height="61px" alt="#" />-->
+        </li>
+    </ul>
+</div>
+<script>
+    var numImg = document.getElementsByTagName("li"),
+        topImg = [],
+        downImg = [],
+        date = new Date();
+
+        for(var i=0;i<numImg.length;i++){
+            topImg[i] = numImg[i].getElementsByTagName("p")[0];
+            downImg[i] = numImg[i].getElementsByTagName("p")[1];
+            downImg[i].index = i;
+            downImg[i].num = 0;
+        }
+        console.log(downImg)
+
+        function dateFormat (n) {
+          return  n < 10? n = '0'+ n : n + '';
+        }
+
+
+        setInterval(function () {
+            date = new Date();
+            var hh = dateFormat(date.getHours()),
+                mm = dateFormat(date.getMinutes()),
+                ss = dateFormat(date.getSeconds()),
+                str = hh + mm + ss;
+            console.log(str)
+            for(var j=0;j<str.length;j++){
+                if(topImg[j].num !== str[j]){
+                    topImg[j].num = str[j];
+                    //console.log(downImg[j].num)
+                    downImg[j].className = "down num"+ topImg[j].num +"";
+                    animation(numImg[j],{
+                        data:{
+                            marginTop:-61
+                        }
+                    },500,function(){
+                        for(var i=0;i<str.length;i++){
+                            topImg[i].className = "top num"+ topImg[i].num +"";
+                        }
+                        this.style.marginTop = 0;
+                    })
+                }
+            }
+        },1000)
+</script>
+</body>
+</html>
